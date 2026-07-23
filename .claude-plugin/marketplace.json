@@ -1,12 +1,11 @@
 {
-  "name": "anthropic-agent-skills",
+  "name": "petermera-skills",
   "owner": {
-    "name": "Keith Lazuka",
-    "email": "klazuka@anthropic.com"
+    "name": "Peter Mera"
   },
   "metadata": {
-    "description": "Anthropic example skills",
-    "version": "1.0.0"
+    "description": "Reusable Claude skills and a coordinated specialist agent team",
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -49,6 +48,40 @@
       "strict": false,
       "skills": [
         "./skills/claude-api"
+      ]
+    },
+    {
+      "name": "work-agent-team",
+      "description": "Coordinated Claude work team for product building, quality review, documents, creative work, and skill maintenance",
+      "source": "./",
+      "strict": false,
+      "agents": [
+        "./agents/work-lead.md",
+        "./agents/product-builder.md",
+        "./agents/quality-reviewer.md",
+        "./agents/document-producer.md",
+        "./agents/creative-director.md",
+        "./agents/skill-maintainer.md"
+      ],
+      "skills": [
+        "./skills/team-orchestration",
+        "./skills/doc-coauthoring",
+        "./skills/internal-comms",
+        "./skills/claude-api",
+        "./skills/mcp-builder",
+        "./skills/web-artifacts-builder",
+        "./skills/frontend-design",
+        "./skills/webapp-testing",
+        "./skills/docx",
+        "./skills/pdf",
+        "./skills/pptx",
+        "./skills/xlsx",
+        "./skills/theme-factory",
+        "./skills/brand-guidelines",
+        "./skills/canvas-design",
+        "./skills/algorithmic-art",
+        "./skills/slack-gif-creator",
+        "./skills/skill-creator"
       ]
     }
   ]
