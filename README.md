@@ -17,6 +17,28 @@ This repository contains skills that demonstrate what's possible with Claude's s
 
 Each skill is self-contained in its own folder with a `SKILL.md` file containing the instructions and metadata that Claude uses. Browse through these skills to get inspiration for your own skills or to understand different patterns and approaches.
 
+## Work Agent Team
+
+This repository also provides a coordinated Claude work team with six reusable agents:
+
+- `work-lead` plans, delegates, tracks dependencies, and synthesizes results.
+- `product-builder` builds Claude integrations, MCP servers, and web products.
+- `quality-reviewer` independently tests web applications and acceptance criteria.
+- `document-producer` creates Word, PDF, PowerPoint, and spreadsheet deliverables.
+- `creative-director` owns brand, visual, generative-art, and animated assets.
+- `skill-maintainer` creates and improves reusable skills and agent definitions.
+
+The canonical agent-to-skill mapping lives in [`skills/team-orchestration/references/agent-map.yaml`](./skills/team-orchestration/references/agent-map.yaml).
+
+Install the complete team in Claude Code:
+
+```text
+/plugin marketplace add petermera/skills
+/plugin install work-agent-team@petermera-skills
+```
+
+For multi-agent work, ask Claude to use `work-lead` and create only the specialist teammates needed for the request. Agent-team teammates should be told which mapped skills to use in their spawn instructions.
+
 Many skills in this repo are open source (Apache 2.0). We've also included the document creation & editing skills that power [Claude's document capabilities](https://www.anthropic.com/news/create-files) under the hood in the [`skills/docx`](./skills/docx), [`skills/pdf`](./skills/pdf), [`skills/pptx`](./skills/pptx), and [`skills/xlsx`](./skills/xlsx) subfolders. These are source-available, not open source, but we wanted to share these with developers as a reference for more complex skills that are actively used in a production AI application.
 
 ## Disclaimer
@@ -38,14 +60,14 @@ You can register this repository as a Claude Code Plugin marketplace by running 
 
 Then, to install a specific set of skills:
 1. Select `Browse and install plugins`
-2. Select `anthropic-agent-skills`
+2. Select `petermera-skills`
 3. Select `document-skills` or `example-skills`
 4. Select `Install now`
 
 Alternatively, directly install either Plugin via:
 ```
-/plugin install document-skills@anthropic-agent-skills
-/plugin install example-skills@anthropic-agent-skills
+/plugin install document-skills@petermera-skills
+/plugin install example-skills@petermera-skills
 ```
 
 After installing the plugin, you can use the skill by just mentioning it. For instance, if you install the `document-skills` plugin from the marketplace, you can ask Claude Code to do something like: "Use the PDF skill to extract the form fields from `path/to/some-file.pdf`"
