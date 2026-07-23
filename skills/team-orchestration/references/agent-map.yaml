@@ -1,0 +1,33 @@
+version: 1
+lead: work-lead
+
+agents:
+  work-lead:
+    purpose: Plan, delegate, track, review, and synthesize multi-deliverable work.
+    skills: [team-orchestration, doc-coauthoring, internal-comms]
+    delegates_to: [product-builder, quality-reviewer, document-producer, creative-director, skill-maintainer]
+  product-builder:
+    purpose: Build Claude integrations, MCP servers, web applications, and interactive artifacts.
+    skills: [claude-api, mcp-builder, web-artifacts-builder, frontend-design]
+    review_by: [quality-reviewer]
+  quality-reviewer:
+    purpose: Independently test web applications and verify implementation acceptance criteria.
+    skills: [webapp-testing]
+  document-producer:
+    purpose: Create and edit professional documents, presentations, PDFs, and spreadsheets.
+    skills: [docx, pdf, pptx, xlsx, theme-factory, brand-guidelines]
+  creative-director:
+    purpose: Define visual direction and create branded static, generative, and animated assets.
+    skills: [brand-guidelines, theme-factory, canvas-design, algorithmic-art, slack-gif-creator]
+  skill-maintainer:
+    purpose: Create, evaluate, and improve skills and reusable agent definitions.
+    skills: [skill-creator]
+
+handoffs:
+  lead_to_specialist: [objective, deliverables, owned_files, required_skills, acceptance_checks, dependencies]
+  specialist_to_lead: [outcome, files_changed, checks_run, unresolved_risks, decisions_needed]
+  reviewer_to_lead: [pass_or_fail, evidence, reproduction_steps, recommended_owner]
+
+parallelism:
+  allowed_when: [independent_outputs, non_overlapping_files, explicit_dependencies]
+  avoid_when: [same_file_edits, strictly_sequential_work, unnecessary_coordination]
