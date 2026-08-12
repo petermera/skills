@@ -3,6 +3,8 @@
 [![skills.sh](https://skills.sh/b/anthropics/skills)](https://skills.sh/anthropics/skills)
 
 # Skills
+
+For a concise contribution checklist, see [Skill Design and Testing Principles](docs/SKILL_DESIGN_PRINCIPLES.md).
 Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
 
 For more information, check out:
